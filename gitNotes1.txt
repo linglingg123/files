@@ -1,0 +1,21 @@
+GIT NOTES 1
+
+git init: tao ra branch rong moi
+
+git remote add origin <link git repos>: chi dan toi repos de day du lieu
+
+git add . : them vao toan bo cac file trong duong dan da git bash
+
+git commit -m "comment": dong goi du lieu vua add
+
+git push origin (ten branch): day len repos
+
+
+khi cap nhat du lieu trong repos:
+git add . : cap nhat vao toan bo cac file trong duong dan da git bash
+
+git commit -m "comment khac": dong goi du lieu moi
+
+git pull origin (ten branch): pull ve du lieu cu de so sanh
+
+git push origin (ten branch): day len repos
