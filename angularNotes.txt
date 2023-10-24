@@ -1,0 +1,16 @@
+setup.
+- name
+- data(): all scopes $
+- methods
+- created()
+- watch
+- props: data when component is called
+
+life-cycle: render() vs mounted(load api, next)
+
+components: mother -> child through props
+$emit('',)
+
+2 way binding: {{}} < v-model (model - view - viewmodel)
+
+Vue -> 

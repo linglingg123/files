@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Angular JS Services</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+    </script>
+</head>
+
+<body>
+    <div ng-app="mainApp" ng-controller="CalcController">
+        <p>Enter a number: <input type="number" ng-model="number" /></p>
+        <button ng-click="square()">Square</sup></button>
+        <p>Result: {{result}}</p>
+    </div>
+
+    <script>
+
+        var mainApp = angular.module("mainApp", []);
+        mainApp.service('MyService', function () {
+            this.square = function (a) {
+                return a * a;
+            }
+        });
+        //Inject the created service into the controller
+        mainApp.controller('CalcController', function ($scope, MyService) {
+            $scope.square = function () {
+                $scope.result = MyService.square($scope.number);
+            }
+        });
+    </script>
+</body>
+
+</html>

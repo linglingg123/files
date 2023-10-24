@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Angular JS Services</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+    </script>
+</head>
+
+<body>
+    <div ng-app="mainApp" ng-controller="DemoController">
+        <p>Enter a number: <input type="number" ng-model="number" /></p>
+        <button ng-click="cube1()">X<sup>3</sup></button>
+        <p>Result (Using Factory): {{result1}}</p>
+        <button ng-click="cube2()">X<sup>3</sup></button>
+        <p>Result (Using Service): {{result2}}</p>
+    </div>
+    <script>
+        var mainApp = angular.module("mainApp", []);
+        mainApp.factory('Math', function () {
+            var factoryObj = {};
+            factoryObj.multiply = function (a) {
+                return a * a * a;
+            }
+            return factoryObj;
+        });
+        mainApp.service('CalcService', function () {
+            this.cube = function (a) {
+                return a * a * a;
+            }
+        });
+        mainApp.controller('DemoController', function ($scope, CalcService,
+
+            Math) {
+
+            // Using Service
+            $scope.cube1 = function () {
+                $scope.result1 = CalcService.cube($scope.number);
+            }
+            // Using Factory
+            $scope.cube2 = function () {
+
+                $scope.result2 = Math.multiply($scope.number);
+            }
+        });
+    </script>
+</body>
+
+</html>

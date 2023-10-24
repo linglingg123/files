@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+src =
+"https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js">
+</script>
+<style>
+div {
+border: 1px solid green;
+width: 100%;
+height: 50px;
+display: block;
+margin-bottom: 10px;
+text-align:center;
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+    <ol>
+        <li ng-repeat="name in owners">
+        {{name}}
+        </li>
+        </ol>
+        <div ng-repeat="name in owners">
+        {{name}}
+        </div>
+</body>
+</html>

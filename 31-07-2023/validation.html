@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js">
+</script>
+<body ng-app="">
+<p>Write an E-mail address in the input field:</p>
+<form name="myForm" >
+Email: <input type="email" name="input" ng-model="emailid" ngMinlength=5 required>
+<br/>
+<br/>
+<span class="error" ng-show="myForm.input.$error.required">
+Required!</span><br/>
+<span class="error" ng-show="myForm.input.$error.email">
+Not valid email!</span>
+<span ng-show="myForm.input.$untouched">
+    Untouched
+</span>
+<br>
+Email Id = {{emailid}}<br/><br/>
+myForm.input.$valid = {{myForm.input.$valid}}<br/><br/>
+myForm.input.$error = {{myForm.input.$error}}<br/><br/>
+myForm.$error.email = {{!!myForm.$error.email}}<br/><br/>
+</form>
+</body>
+</html>
